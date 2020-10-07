@@ -46,6 +46,9 @@
             android:layout_below="@+id/welcome_user_txt"
             android:layout_marginTop="52dp"
             android:layout_marginStart="20dp"
+            android:focusableInTouchMode="true"
+            android:cursorVisible="false"
+            android:focusable="false"
             android:ems="10"
             android:hint="Enter Date"
             android:textColorHint="@android:color/white"/>
