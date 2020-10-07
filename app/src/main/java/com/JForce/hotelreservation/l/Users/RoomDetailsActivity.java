@@ -195,6 +195,7 @@ public class RoomDetailsActivity extends AppCompatActivity {
 
                                             Toast.makeText(RoomDetailsActivity.this, "Room Booked Successfully", Toast.LENGTH_SHORT).show();
                                             Intent intent = new Intent(RoomDetailsActivity.this, HomeActivity.class);
+                                            intent.putExtra("emailId", emailID);
                                             startActivity(intent);
                                             finish();
 
