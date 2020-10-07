@@ -90,6 +90,8 @@ public class RoomBookingsActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
 
 
+
+
     }
 
 
@@ -97,6 +99,7 @@ public class RoomBookingsActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
+        noBookingsAvailable.setVisibility(View.VISIBLE);
 
         Log.d("TAG", "onStart: " + Bookingdate);
 
@@ -113,10 +116,14 @@ public class RoomBookingsActivity extends AppCompatActivity {
 
                 holder.guestName.setText("Name : "+ model.getNameOfGuest());
                 holder.guestPhoneNumber.setText("Phone : "+ model.getGuestPhoneNumber());
-                holder.roomNumber.setText("Room : "+ model.getRTitle());
-                holder.checkInDate.setText("Check In : "+ model.getCheckInDate());
+                holder.roomNumber.setText(model.getRTitle());
+                holder.checkInDate.setText(model.getCheckInDate());
                 holder.numberOfGuests.setText("No. of Guests : "+ model.getNumberOfGuests());
                 Picasso.get().load(model.getRImage()).placeholder(R.drawable.loading).into(holder.roomImage);
+
+
+
+                noBookingsAvailable.setVisibility(View.INVISIBLE);
 
             }
 
@@ -133,12 +140,9 @@ public class RoomBookingsActivity extends AppCompatActivity {
         adapter.startListening();
 
 
-        int i = recyclerView.getAdapter().getItemCount();
 
-        if (i == 0)
-        {
-            noBookingsAvailable.setVisibility(View.VISIBLE);
-        }
+
+
 
     }
 }
