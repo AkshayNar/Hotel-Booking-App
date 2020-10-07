@@ -34,7 +34,7 @@ public class HomeActivity extends AppCompatActivity {
     private TextView welcomeUser;
     private TextView selected;
     private TextView selected1;
-    private String emailid, name, phone, uid, checkInDate = "", checkOutDate, Capacity = "", Type = "", getName ;
+    private String emailid, name, phone, uid, checkInDate = "", Capacity = "", Type = "", getName ;
     private int checkInDay, checkInMonth, checkInYear, currentYear, currentMonth, currentDay;
 
 
@@ -42,7 +42,7 @@ public class HomeActivity extends AppCompatActivity {
     private Button findRoomBtn;
 
     DatePickerDialog picker;
-    EditText checkindate, checkoutdate;
+    EditText checkindate;
 
     private Spinner spinner, spinner1;
 
@@ -58,7 +58,6 @@ public class HomeActivity extends AppCompatActivity {
         fStore = FirebaseFirestore.getInstance();
 
         checkindate = findViewById(R.id.date_field_1);
-        /*checkoutdate = findViewById(R.id.date_field_2);*/
 
 
         findRoomBtn = findViewById(R.id.find_rooms_btn);
@@ -86,45 +85,12 @@ public class HomeActivity extends AppCompatActivity {
         });
 
 
-
-
-
-
-
         checkindate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 pickdate();
             }
         });
-
-
-        /*checkoutdate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                final Calendar cldr = Calendar.getInstance();
-                int day = cldr.get(Calendar.DAY_OF_MONTH);
-                int month = cldr.get(Calendar.MONTH);
-                int year = cldr.get(Calendar.YEAR);
-                // date picker dialog
-                picker = new DatePickerDialog(HomeActivity.this,
-                        new DatePickerDialog.OnDateSetListener() {
-                            @Override
-                            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                                checkoutdate.setText(dayOfMonth + "/" + (monthOfYear + 1) + "/" + year);
-                                checkoutdate.setTextColor(Color.rgb(255, 255, 255));
-
-                                HomeActivity.this.checkOutDate = checkoutdate.getText().toString();
-
-
-                            }
-                        }, year, month, day);
-                picker.show();
-            }
-        });*/
-
-
-
 
 
 
@@ -163,10 +129,6 @@ public class HomeActivity extends AppCompatActivity {
 
             }
         });
-
-
-
-
 
 
         selected1 = findViewById(R.id.select_type);
@@ -237,8 +199,6 @@ public class HomeActivity extends AppCompatActivity {
                             if ((checkInYear >= currentYear)) {
                                 if ((checkInMonth >= currentMonth) && checkInYear == currentYear)
                                 {
-
-
                                     if ((checkInDay >= currentDay) && (checkInMonth == currentMonth))
                                     {
                                         Intent intent = new Intent(HomeActivity.this, RoomListActivity2.class);
@@ -298,9 +258,6 @@ public class HomeActivity extends AppCompatActivity {
         });
 
 
-
-
-
     }
 
     private void pickdate() {
@@ -342,16 +299,6 @@ public class HomeActivity extends AppCompatActivity {
         }
         return super.onKeyDown(keyCode, event);
     }
-
-
-
-
-
-
-
-
-
-
 
 
     }

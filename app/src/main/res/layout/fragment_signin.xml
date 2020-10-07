@@ -54,6 +54,8 @@
         android:layout_marginHorizontal="30dp"/>
 
 
+
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -103,10 +105,12 @@
         android:text="I am Admin"
         android:textSize="14dp"
         android:textStyle="bold"
-        android:textColor="#C5C5C5"
+        android:textColor="#8C8B8B"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="20dp"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="20dp"/>
+
+
 
 </RelativeLayout>

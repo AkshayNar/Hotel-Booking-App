@@ -133,7 +133,6 @@ public class SigninFragment extends Fragment {
 
                 Intent intent = new Intent(getActivity(), AdminHomeActivity.class);
                 startActivity(intent);
-                getActivity().finish();
             }
         });
 

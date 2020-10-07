@@ -55,8 +55,6 @@ public class RoomBookingsActivity extends AppCompatActivity {
         noBookingsAvailable = findViewById(R.id.no_bookings_available);
 
 
-
-
         fStore = FirebaseFirestore.getInstance();
 
         bookigDate.setOnClickListener(new View.OnClickListener() {
@@ -141,8 +139,6 @@ public class RoomBookingsActivity extends AppCompatActivity {
         {
             noBookingsAvailable.setVisibility(View.VISIBLE);
         }
-
-
 
     }
 }
