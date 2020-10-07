@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".l.Admin.AdminEditRoomActivity">
+
+
+    <TextView
+        android:id="@+id/add_new_product_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit Room"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        />
+
+
+    <LinearLayout
+        android:id="@+id/add_product_image_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal"
+        android:layout_below="@+id/add_new_product_text"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <ImageView
+            android:id="@+id/maintain_select_room_image"
+            android:layout_width="96dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="5dp"
+            android:cropToPadding="false"
+            android:scaleType="centerCrop"
+            android:layout_marginStart="20dp"
+            android:src="@drawable/select_product_image" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp">
+
+            <EditText
+                android:id="@+id/maintain_room_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:hint="Title"
+                android:inputType="textCapWords"
+                android:padding="15dp"
+                android:textSize="15dp" />
+
+            <EditText
+                android:id="@+id/maintain_room_capacity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/maintain_room_title"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:hint="Capacity"
+                android:inputType="number"
+                android:padding="15dp"
+                android:textSize="15dp" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearlayout_two"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/add_product_image_layout"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/maintain_original_price"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/add_product_image_layout"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:inputType="number"
+            android:hint="Original price..."
+            android:singleLine="false"
+            android:padding="15dp"
+            android:textSize="15dp"
+            />
+
+        <EditText
+            android:id="@+id/maintain_discount_price"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/add_product_image_layout"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:hint="Discount Price "
+            android:inputType="number"
+            android:singleLine="false"
+            android:padding="15dp"
+            android:textSize="15dp"
+            />
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/maintain_room_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearlayout_two"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:lines="7"
+        android:gravity="top"
+        android:hint="Room Description"
+        android:layout_marginTop="20dp"
+        android:singleLine="false"
+        android:padding="15dp"
+        android:textSize="15dp"
+        />
+
+    <Button
+        android:id="@+id/update_room_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/maintain_room_description"
+       android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="20dp"
+        android:text="Update"
+        android:background="@color/colorPrimary"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:padding="15dp"
+        android:textSize="15dp"
+        />
+
+
+
+
+    <Button
+        android:id="@+id/delete_room_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:layout_marginHorizontal="30dp"
+        android:padding="15dp"
+        android:text="Delete Room"
+        android:background="@color/colorPrimary"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        />
+
+
+
+
+</RelativeLayout>

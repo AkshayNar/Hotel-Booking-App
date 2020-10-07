@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "929244544972",
+    "firebase_url": "https://hotel-registration-7e797.firebaseio.com",
+    "project_id": "hotel-registration-7e797",
+    "storage_bucket": "hotel-registration-7e797.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:929244544972:android:658e7c9fb88c790a2ce769",
+        "android_client_info": {
+          "package_name": "com.JForce.hotelreservation"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "929244544972-l1qsgabicescppipsfi5t8r3hipo834t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.JForce.hotelreservation",
+            "certificate_hash": "db010a5fcd330e034a5dbbd71d362590f44d5799"
+          }
+        },
+        {
+          "client_id": "929244544972-p5ovk3bcs58p5povsasgaovpfc4le55n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCaKx2aNqau2XPTCNDsGMxQKSwLflFfXvg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "929244544972-p5ovk3bcs58p5povsasgaovpfc4le55n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".l.Users.HomeActivity">
+
+
+    <RelativeLayout
+        android:id="@+id/top_relative"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@color/colorPrimary">
+
+        <TextView
+            android:id="@+id/welcome_user_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Welcome"
+            android:textStyle="bold"
+            android:layout_marginTop="25dp"
+            android:layout_marginStart="20dp"
+            android:textSize="20sp"
+            android:textColor="@android:color/white"/>
+
+
+        <TextView
+            android:id="@+id/check_in_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Check In Date "
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:layout_below="@+id/welcome_user_txt"
+            android:layout_marginTop="60dp"
+            android:layout_alignStart="@+id/welcome_user_txt"/>
+
+
+        <EditText
+            android:id="@+id/date_field_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/check_in_date"
+            android:layout_below="@+id/welcome_user_txt"
+            android:layout_marginTop="52dp"
+            android:layout_marginStart="20dp"
+            android:ems="10"
+            android:hint="Enter Date"
+            android:textColorHint="@android:color/white"/>
+
+
+
+        <!--<TextView
+            android:id="@+id/check_out_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Check Out Date "
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_marginTop="35dp"
+            android:textColor="@android:color/white"
+            android:layout_below="@+id/check_in_date"
+            android:layout_alignStart="@+id/welcome_user_txt"/>
+
+
+        <EditText
+            android:id="@+id/date_field_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/check_in_date"
+            android:layout_below="@+id/check_in_date"
+            android:layout_marginTop="27dp"
+            android:layout_marginStart="20dp"
+            android:ems="10"
+            android:hint="Enter Date"
+            android:textColorHint="@android:color/white"/>-->
+
+
+    </RelativeLayout>
+    
+
+    <LinearLayout
+        android:id="@+id/number_of_guest_l1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/top_relative"
+        android:layout_marginTop="30dp">
+    
+    <TextView
+        android:id="@+id/no_of_guest_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Number of guests"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginStart="20dp"
+        android:layout_gravity="center_vertical"
+        android:textColor="@android:color/black"/>
+
+
+        <TextView
+            android:id="@+id/no_of_guest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select"
+            android:textSize="18dp"
+            android:layout_marginStart="20dp"
+            android:layout_gravity="center_vertical"
+            android:visibility="invisible"
+            android:textColor="#959393"/>
+
+
+
+    <Spinner
+        android:id="@+id/capacity_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_gravity="center_vertical"
+        android:gravity="center"
+        />
+
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/number_of_guest_l2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/number_of_guest_l1"
+        android:layout_marginTop="30dp">
+    <TextView
+        android:id="@+id/select_type_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Type"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginStart="20dp"
+        android:textColor="@android:color/black"/>
+
+        <TextView
+            android:id="@+id/select_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Type"
+            android:textSize="18sp"
+            android:layout_marginStart="20dp"
+            android:visibility="invisible"
+            android:textColor="#686868"/>
+
+
+        <Spinner
+            android:id="@+id/type_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            />
+
+    </LinearLayout>
+
+
+
+
+    <Button
+        android:id="@+id/find_rooms_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Get Your Room"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginHorizontal="30dp"
+        android:background="@color/colorPrimary"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        />
+
+
+
+
+
+</RelativeLayout>
+
+
+
+    <!--<LinearLayout
+        android:id="@+id/linearlayout_three"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/top_relative"
+        android:layout_marginHorizontal="30dp"
+        android:orientation="horizontal">
+
+
+
+        <TextView
+            android:id="@+id/room_capacity_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/room_title"
+            android:text="Capacity"
+            android:paddingVertical="10dp"
+            android:layout_marginRight="20dp"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/room_capacity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/room_title"
+            android:text="Selected"
+            android:paddingVertical="10dp"
+            android:textSize="16sp" />
+
+        <Spinner
+            android:id="@+id/capacity_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginRight="5dp"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            />
+
+
+
+        <TextView
+            android:id="@+id/room_type_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/room_title"
+            android:text="Type"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:textSize="16sp"
+            android:paddingVertical="10dp"
+            />
+
+        <TextView
+            android:id="@+id/room_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/room_title"
+            android:text="Type   "
+            android:textSize="16sp"
+            android:paddingVertical="10dp"
+            />
+
+
+        <Spinner
+            android:id="@+id/type_spinner"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_height="20dp"
+            android:gravity="center"
+            />
+
+
+    </LinearLayout>-->
+
+
+
+
+
+
