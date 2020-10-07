@@ -13,7 +13,7 @@ import com.JForce.hotelreservation.l.Interface.ItemClickListener;
 public class RoomViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
 
-    public TextView txtRName, txtRDescription, txtROriginalPrice, txtRCapacity, txtRDiscountPrice, txtRoffer, txtRStatus, crossLine, txtlastUpdated;
+    public TextView txtRName, txtRDescription, txtROriginalPrice, txtRCapacity, txtRDiscountPrice, txtRoffer, txtRType, txtRStatus, crossLine, txtlastUpdated;
     public ImageView imageView ;
     public ItemClickListener listner;
 
@@ -29,6 +29,7 @@ public class RoomViewHolder extends RecyclerView.ViewHolder implements View.OnCl
         txtRDiscountPrice = itemView.findViewById(R.id.discount_price_txt);
         txtRoffer = itemView.findViewById(R.id.off_txt);
         crossLine = itemView.findViewById(R.id.crossline);
+        txtRType = itemView.findViewById(R.id.type_txt);
         txtRStatus = itemView.findViewById(R.id.status_txt);
         txtlastUpdated = itemView.findViewById(R.id.last_updated_txt);
 

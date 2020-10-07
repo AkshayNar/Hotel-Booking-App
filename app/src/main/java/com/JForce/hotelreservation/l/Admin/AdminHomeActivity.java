@@ -95,7 +95,7 @@ public class AdminHomeActivity extends AppCompatActivity {
                 holder.txtROriginalPrice.setText("Rs. " +model.getROriginalPrice());
                 holder.txtRDiscountPrice.setText(model.getRDiscountPrice());
                 holder.txtRoffer.setText(model.getRoffer()+ " %Off");
-                holder.txtRStatus.setText(model.getStatus());
+                holder.txtRType.setText(model.getRType());
                 holder.txtlastUpdated.setText("Last Updated on "+model.getLastUpdated());
                 Picasso.get().load(model.getRImage()).placeholder(R.drawable.loading).into(holder.imageView);
 
@@ -117,13 +117,8 @@ public class AdminHomeActivity extends AppCompatActivity {
                                             holder.txtRoffer.setVisibility(View.VISIBLE);
                                         }
 
-                                        String status = documentSnapshot.getString("Status");
 
-                                        if (status.equals("Booked"))
-                                        {
-                                            holder.txtRStatus.setTextColor(Color.rgb(255, 107, 107));
 
-                                        }
 
                                         holder.itemView.setOnClickListener(new View.OnClickListener() {
                                             @Override

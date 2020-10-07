@@ -2,23 +2,26 @@ package com.JForce.hotelreservation.l.ModelClass;
 
 public class Rooms {
 
-    private String RTitle, RImage, RCapacity, ROriginalPrice, RDiscountPrice,RDescription, Rid, Roffer, Status, LastUpdated;
+    private String RTitle, RImage, RCapacity, ROriginalPrice, RDiscountPrice,RDescription, Rid, Roffer, Status, LastUpdated, RType;
 
     public Rooms() {
     }
 
-    public Rooms(String RTitle, String RImage, String RCapacity, String ROriginalPrice, String RDiscountPrice, String RDiscription, String rid, String roffer, String status, String lastUpdated) {
+
+    public Rooms(String RTitle, String RImage, String RCapacity, String ROriginalPrice, String RDiscountPrice, String RDescription, String rid, String roffer, String status, String lastUpdated, String RType) {
         this.RTitle = RTitle;
         this.RImage = RImage;
         this.RCapacity = RCapacity;
         this.ROriginalPrice = ROriginalPrice;
         this.RDiscountPrice = RDiscountPrice;
-        this.RDescription = RDiscription;
+        this.RDescription = RDescription;
         Rid = rid;
         Roffer = roffer;
         Status = status;
         LastUpdated = lastUpdated;
+        this.RType = RType;
     }
+
 
     public String getRTitle() {
         return RTitle;
@@ -64,8 +67,8 @@ public class Rooms {
         return RDescription;
     }
 
-    public void setRDescription(String RDiscription) {
-        this.RDescription = RDiscription;
+    public void setRDescription(String RDescription) {
+        this.RDescription = RDescription;
     }
 
     public String getRid() {
@@ -98,5 +101,13 @@ public class Rooms {
 
     public void setLastUpdated(String lastUpdated) {
         LastUpdated = lastUpdated;
+    }
+
+    public String getRType() {
+        return RType;
+    }
+
+    public void setRType(String RType) {
+        this.RType = RType;
     }
 }
