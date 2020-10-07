@@ -182,6 +182,7 @@ public class RoomListActivity2 extends AppCompatActivity {
                                         intent.putExtra("Rid", model.getRid());
                                         intent.putExtra("Roff", model.getRoffer());
                                         intent.putExtra("emailId", emailid);
+                                        intent.putExtra("RType", model.getRType());
                                         Log.d("TAG", "onCreate: " + emailid);
                                         intent.putExtra("CheckInDate", checkInDate);
                                         startActivity(intent);

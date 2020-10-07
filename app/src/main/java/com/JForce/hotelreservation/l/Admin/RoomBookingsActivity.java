@@ -119,6 +119,7 @@ public class RoomBookingsActivity extends AppCompatActivity {
                 holder.roomNumber.setText(model.getRTitle());
                 holder.checkInDate.setText(model.getCheckInDate());
                 holder.numberOfGuests.setText("No. of Guests : "+ model.getNumberOfGuests());
+                holder.Rtype.setText(model.getRType());
                 Picasso.get().load(model.getRImage()).placeholder(R.drawable.loading).into(holder.roomImage);
 
 

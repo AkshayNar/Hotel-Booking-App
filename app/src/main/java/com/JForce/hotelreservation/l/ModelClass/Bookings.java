@@ -2,13 +2,12 @@ package com.JForce.hotelreservation.l.ModelClass;
 
 public class Bookings {
 
-    private String RTitle, nameOfGuest, GuestPhoneNumber, CheckInDate, BookingDate, RDiscountPrice, ROriginalPrice, RImage, NumberOfGuests;
+    private String RTitle, nameOfGuest, GuestPhoneNumber, CheckInDate, BookingDate, RDiscountPrice, ROriginalPrice, RImage, NumberOfGuests, RType;
 
     public Bookings() {
     }
 
-
-    public Bookings(String RTitle, String nameOfGuest, String guestPhoneNumber, String checkInDate, String bookingDate, String RDiscountPrice, String ROriginalPrice, String RImage, String numberOfGuests) {
+    public Bookings(String RTitle, String nameOfGuest, String guestPhoneNumber, String checkInDate, String bookingDate, String RDiscountPrice, String ROriginalPrice, String RImage, String numberOfGuests, String RType) {
         this.RTitle = RTitle;
         this.nameOfGuest = nameOfGuest;
         GuestPhoneNumber = guestPhoneNumber;
@@ -18,6 +17,7 @@ public class Bookings {
         this.ROriginalPrice = ROriginalPrice;
         this.RImage = RImage;
         NumberOfGuests = numberOfGuests;
+        this.RType = RType;
     }
 
 
@@ -91,5 +91,13 @@ public class Bookings {
 
     public void setNumberOfGuests(String numberOfGuests) {
         NumberOfGuests = numberOfGuests;
+    }
+
+    public String getRType() {
+        return RType;
+    }
+
+    public void setRType(String RType) {
+        this.RType = RType;
     }
 }

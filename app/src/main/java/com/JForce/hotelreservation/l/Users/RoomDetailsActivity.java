@@ -36,7 +36,7 @@ public class RoomDetailsActivity extends AppCompatActivity {
     private ImageView roomImage;
     private TextView roomTitle, roomDescription, roomOriginalPrice, roomofferPrice, crossline, Roff;
     private String Rid = "", RImage = "", Rstate = "", RTitle = "", RCapacity, ROriginalPrice, RDiscountPrice, RDescription,
-            roff = "", emailID, checkInDate;
+            roff = "", emailID, checkInDate, Rtype;
     private String name, phone, uid;
 
     private ProgressDialog loadingBar;
@@ -74,6 +74,8 @@ public class RoomDetailsActivity extends AppCompatActivity {
         RImage = getIntent().getStringExtra("RImage");
         roff = getIntent().getStringExtra("Roff");
         emailID = getIntent().getStringExtra("emailId");
+        Rtype = getIntent().getStringExtra("RType");
+
 
 
         displayRoomInfo(RTitle, RCapacity, ROriginalPrice, RDiscountPrice, RDescription);
@@ -139,6 +141,7 @@ public class RoomDetailsActivity extends AppCompatActivity {
         RImage = getIntent().getStringExtra("RImage");
         roff = getIntent().getStringExtra("Roff");
         emailID = getIntent().getStringExtra("emailId");
+        Rtype = getIntent().getStringExtra("RType");
 
 
         Query query = fStore.collection("Users").whereEqualTo("emailId", emailID);
@@ -178,6 +181,7 @@ public class RoomDetailsActivity extends AppCompatActivity {
                         roomMap.put("ROriginalPrice", ROriginalPrice);
                         roomMap.put("RDiscountPrice", RDiscountPrice);
                         roomMap.put("Roffer", roff);
+                        roomMap.put("RType", Rtype);
                         roomMap.put("NumberOfGuests", RCapacity);
                         roomMap.put("nameOfGuest", name);
                         roomMap.put("CheckInDate", checkInDate);

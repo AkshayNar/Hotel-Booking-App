@@ -14,13 +14,26 @@
         android:background="@color/colorPrimary">
 
         <TextView
-            android:id="@+id/welcome_user_txt"
+            android:id="@+id/welcome_user_txttt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Welcome"
             android:textStyle="bold"
             android:layout_marginTop="25dp"
             android:layout_marginStart="20dp"
+            android:textSize="20sp"
+            android:textColor="@android:color/white"/>
+
+
+        <TextView
+            android:id="@+id/welcome_user_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="bold"
+            android:layout_marginTop="25dp"
+            android:layout_marginStart="10dp"
+            android:layout_toRightOf="@+id/welcome_user_txttt"
             android:textSize="20sp"
             android:textColor="@android:color/white"/>
 
@@ -35,7 +48,7 @@
             android:textColor="@android:color/white"
             android:layout_below="@+id/welcome_user_txt"
             android:layout_marginTop="60dp"
-            android:layout_alignStart="@+id/welcome_user_txt"/>
+            android:layout_alignStart="@+id/welcome_user_txttt"/>
 
 
         <EditText

@@ -221,7 +221,7 @@ public class AdminEditRoomActivity extends AppCompatActivity {
 
     private void StoreRoomInformation() {
 
-        loadingBar.setTitle("Adding New Room");
+        loadingBar.setTitle("Updating Room");
         loadingBar.setMessage("Please wait....");
         loadingBar.setCanceledOnTouchOutside(false);
         loadingBar.show();

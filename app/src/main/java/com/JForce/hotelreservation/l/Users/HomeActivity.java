@@ -65,24 +65,7 @@ public class HomeActivity extends AppCompatActivity {
 
         emailid = getIntent().getStringExtra("emailId");
 
-        Query query = fStore.collection("Users").whereEqualTo("emailId", emailid);
 
-        query.get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
-            @Override
-            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-                if (!queryDocumentSnapshots.isEmpty()) {
-                    for (QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
-                        name = documentSnapshot.getString("name");
-                        phone = documentSnapshot.getString("phone");
-                        uid = documentSnapshot.getString("uid");
-
-                        welcomeUser = findViewById(R.id.welcome_user_txt);
-                        welcomeUser.setText("Welcome  " + name);
-                    }
-                }
-
-            }
-        });
 
 
         checkindate.setOnClickListener(new View.OnClickListener() {
@@ -288,6 +271,52 @@ public class HomeActivity extends AppCompatActivity {
 
 
     }
+
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+
+        emailid = getIntent().getStringExtra("emailId");
+
+        Query query = fStore.collection("Users").whereEqualTo("emailId", emailid);
+
+        query.get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+            @Override
+            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                if (!queryDocumentSnapshots.isEmpty()) {
+                    for (QueryDocumentSnapshot documentSnapshot : queryDocumentSnapshots) {
+                        name = documentSnapshot.getString("name");
+                        phone = documentSnapshot.getString("phone");
+                        uid = documentSnapshot.getString("uid");
+
+                        welcomeUser = findViewById(R.id.welcome_user_txt);
+                        welcomeUser.setText(name);
+                        welcomeUser.setTextColor(Color.rgb(255,255,0));
+                    }
+                }
+
+            }
+        });
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     public boolean onKeyDown(int keyCode, KeyEvent event)
