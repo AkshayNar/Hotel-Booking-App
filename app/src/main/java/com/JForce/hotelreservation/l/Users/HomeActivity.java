@@ -6,6 +6,7 @@ import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AdapterView;
@@ -34,6 +35,7 @@ public class HomeActivity extends AppCompatActivity {
     private TextView selected;
     private TextView selected1;
     private String emailid, name, phone, uid, checkInDate = "", checkOutDate, Capacity = "", Type = "", getName ;
+    private int checkInDay, checkInMonth, checkInYear, currentYear, currentMonth, currentDay;
 
 
 
@@ -92,23 +94,7 @@ public class HomeActivity extends AppCompatActivity {
         checkindate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final Calendar cldr = Calendar.getInstance();
-                int day = cldr.get(Calendar.DAY_OF_MONTH);
-                int month = cldr.get(Calendar.MONTH);
-                int year = cldr.get(Calendar.YEAR);
-                // date picker dialog
-                picker = new DatePickerDialog(HomeActivity.this,
-                        new DatePickerDialog.OnDateSetListener() {
-                            @Override
-                            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                                checkindate.setText(dayOfMonth + "-" + (monthOfYear + 1) + "-" + year);
-                                checkindate.setTextColor(Color.rgb(255, 255, 255));
-
-                                HomeActivity.this.checkInDate = checkindate.getText().toString();
-
-                            }
-                        }, year, month, day);
-                picker.show();
+                pickdate();
             }
         });
 
@@ -228,41 +214,84 @@ public class HomeActivity extends AppCompatActivity {
                 emailid = getIntent().getStringExtra("emailId");
 
 
-                if (!checkInDate.equals(""))
-                {
-                    /*if (!checkOutDate.equals(""))
-                    {*/
-                        if (!Capacity.equals(""))
-                        {
-                            if (!Type.equals(""))
-                            {
-                                Intent intent = new Intent(HomeActivity.this, RoomListActivity2.class);
-                                intent.putExtra("checkInDate", checkInDate);
-                                intent.putExtra("Capacity", Capacity);
-                                intent.putExtra("Type", Type);
-                                intent.putExtra("emailId", emailid);
-                                startActivity(intent);
+                Calendar c = Calendar.getInstance();
+                int Cyear = c.get(Calendar.YEAR);
+                int Cmonth = c.get(Calendar.MONTH);
+                int Cday = c.get(Calendar.DATE);
 
+
+
+                currentYear = Cyear;
+                currentMonth = Cmonth + 1;
+                currentDay = Cday;
+
+                Log.d("TAG", "onClick: current Year " + currentMonth);
+                Log.d("TAG", "onClick: check In year " + checkInMonth);
+
+
+                if (!checkInDate.equals("")) {
+                    if (!Capacity.equals("")) {
+
+                        if (!Type.equals("")) {
+
+                            if ((checkInYear >= currentYear)) {
+                                if ((checkInMonth >= currentMonth) && checkInYear == currentYear)
+                                {
+
+
+                                    if ((checkInDay >= currentDay) && (checkInMonth == currentMonth))
+                                    {
+                                        Intent intent = new Intent(HomeActivity.this, RoomListActivity2.class);
+                                        intent.putExtra("checkInDate", checkInDate);
+                                        intent.putExtra("Capacity", Capacity);
+                                        intent.putExtra("Type", Type);
+                                        intent.putExtra("emailId", emailid);
+                                        startActivity(intent);
+                                    }
+                                    else if (checkInDay > currentDay )
+                                    {
+                                        Intent intent = new Intent(HomeActivity.this, RoomListActivity2.class);
+                                        intent.putExtra("checkInDate", checkInDate);
+                                        intent.putExtra("Capacity", Capacity);
+                                        intent.putExtra("Type", Type);
+                                        intent.putExtra("emailId", emailid);
+                                        startActivity(intent);
+                                    }
+                                    else
+                                    {
+                                        pickdate();
+
+                                        Toast.makeText(HomeActivity.this, "You can not select Past date", Toast.LENGTH_SHORT).show();
+                                    }
+
+                                } else if (checkInYear > currentYear)
+                                {
+                                    Intent intent = new Intent(HomeActivity.this, RoomListActivity2.class);
+                                    intent.putExtra("checkInDate", checkInDate);
+                                    intent.putExtra("Capacity", Capacity);
+                                    intent.putExtra("Type", Type);
+                                    intent.putExtra("emailId", emailid);
+                                    startActivity(intent);
+                                }
+                                else
+                                {
+                                    pickdate();
+
+                                    Toast.makeText(HomeActivity.this, "You can not select Past date", Toast.LENGTH_SHORT).show();
+                                }
+
+                            } else {
+                                pickdate();
+
+                                Toast.makeText(HomeActivity.this, "You can not select Past date", Toast.LENGTH_SHORT).show();
                             }
-                            else
-                            {
-                                Toast.makeText(HomeActivity.this, "Please Select Room Type", Toast.LENGTH_SHORT).show();
-                            }
+                        } else {
+                            Toast.makeText(HomeActivity.this, "Please Select Room Type", Toast.LENGTH_SHORT).show();
                         }
-                        else
-                        {
-                            Toast.makeText(HomeActivity.this, "Select Number of Guests", Toast.LENGTH_SHORT).show();
-                        }
-
-                    /*}
-                    else
-                    {
-                        Toast.makeText(HomeActivity.this, "Select Check Out Date", Toast.LENGTH_SHORT).show();
-                    }*/
-
-                }
-                else
-                {
+                    } else {
+                        Toast.makeText(HomeActivity.this, "Select Number of Guests", Toast.LENGTH_SHORT).show();
+                    }
+                } else {
                     Toast.makeText(HomeActivity.this, "Please Select Check in Date", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -274,7 +303,34 @@ public class HomeActivity extends AppCompatActivity {
 
     }
 
+    private void pickdate() {
 
+        final Calendar cldr = Calendar.getInstance();
+        final int day = cldr.get(Calendar.DAY_OF_MONTH);
+        final int month = cldr.get(Calendar.MONTH);
+        final int year = cldr.get(Calendar.YEAR);
+        // date picker dialog
+        picker = new DatePickerDialog(HomeActivity.this,
+                new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                        checkindate.setText(dayOfMonth + "-" + (monthOfYear + 1) + "-" + year);
+                        checkindate.setTextColor(Color.rgb(255, 255, 255));
+
+
+                        checkInYear = year;
+                        checkInMonth = monthOfYear + 1;
+                        checkInDay = dayOfMonth;
+
+                        HomeActivity.this.checkInDate = checkindate.getText().toString();
+
+                    }
+                }, year, month, day);
+        picker.show();
+
+
+
+    }
 
 
     public boolean onKeyDown(int keyCode, KeyEvent event)
