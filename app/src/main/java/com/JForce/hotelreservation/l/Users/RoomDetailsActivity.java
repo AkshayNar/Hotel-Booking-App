@@ -178,6 +178,7 @@ public class RoomDetailsActivity extends AppCompatActivity {
                         roomMap.put("ROriginalPrice", ROriginalPrice);
                         roomMap.put("RDiscountPrice", RDiscountPrice);
                         roomMap.put("Roffer", roff);
+                        roomMap.put("NumberOfGuests", RCapacity);
                         roomMap.put("nameOfGuest", name);
                         roomMap.put("CheckInDate", checkInDate);
                         roomMap.put("GuestPhoneNumber", phone);

@@ -13,7 +13,7 @@ import com.JForce.hotelreservation.R;
 public class BookingsViewHolder extends RecyclerView.ViewHolder{
 
 
-    public TextView guestName, guestPhoneNumber, roomNumber, checkInDate;
+    public TextView guestName, guestPhoneNumber, roomNumber, checkInDate, numberOfGuests;
     public ImageView roomImage;
 
 
@@ -26,6 +26,7 @@ public class BookingsViewHolder extends RecyclerView.ViewHolder{
         roomNumber = itemView.findViewById(R.id.room_Number_txt);
         checkInDate = itemView.findViewById(R.id.check_in_date_txt);
         roomImage = itemView.findViewById(R.id.room_image);
+        numberOfGuests = itemView.findViewById(R.id.number_of_guest_txt);
 
 
     }
